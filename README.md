@@ -1,1 +1,1 @@
-This is a personal project to making my own choose your own adventure webpage.
+This is a personal project to making my own choose your own adventure webpage. I will be adding more later
