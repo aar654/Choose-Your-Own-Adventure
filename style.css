@@ -1,0 +1,52 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("img/dungeon.jpg") no-repeat center fixed;
+    background-size: 1920px 1000px;
+}
+
+#container {
+    margin: auto;
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#container>button {
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.44);
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 40px;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000;
+
+}
+
+#container>button:hover {
+    background-color: rgba(0, 0, 0, 0.608);
+}
+
+#textPrompt {
+    margin: 50px 100px;
+    text-align: center;
+    color: white;
+    overflow-wrap: break-word;
+    white-space: wrap;
+    font-size: 50px;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000;
+    transform: translateY(50px);
+}
