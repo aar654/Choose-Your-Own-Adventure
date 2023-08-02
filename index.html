@@ -9,11 +9,23 @@
 </head>
 
 <body>
-    <!-- Prompts given to the user -->
-    <p id="textPrompt">You wake up inside a cave at night by yourself. You panic and check your surroundings. You find a....</p>
+    <button type="button" id="statButton">Current Stats</button>
 
-    <!-- Limit 5 Choices -->
-    <div id="container">
+    <div id="statList">
+        <p id="playerName">Player Name</p>
+        <p id="playerHP">HP: 5</p>
+        <p id="playerMP">MP: 5</p>
+        <p id="playerStr">Str: 5</p>
+        <p id="playerSpd">Spd: 5</p>
+        <p id="playerInt">Int: 5</p>
+    </div>
+
+    <!-- Prompts given to the user -->
+    <p id="textPrompt">You wake up inside a cave at night by yourself. You panic and check your surroundings. You find
+        a....</p>
+
+    <!-- Limit 5 Choices for player-->
+    <div id="choiceContainer">
         <button type="button" id="buttonA">Pizza</button>
         <button type="button" id="buttonB">Pen</button>
         <button type="button" id="buttonC">Sword</button>
