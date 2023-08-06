@@ -14,14 +14,14 @@ body {
     border: none;
     font-size: 15px;
     position:absolute;
-    background-color:rgb(143, 188, 143);
+    background-color:#7EAA92;
     top:0; 
     right:0;
     cursor: pointer;
 }
 
 #statButton:hover {
-    background-color:rgba(143, 188, 143, 0.506);
+    background-color:#7eaa9264;
 }
 
 #statList{
@@ -31,7 +31,7 @@ body {
     white-space: wrap;
     width: 98.5px;
     flex-direction: column;
-    background-color:lightsteelblue;
+    background-color:#9ED2BE;
     text-align: center;
     position:absolute; 
     top:27px; 

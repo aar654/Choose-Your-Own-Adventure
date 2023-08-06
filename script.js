@@ -1,4 +1,4 @@
-//linking elements from external js file to html 
+//linking elements from external js file to html elements
 const textPrompt = document.getElementById("textPrompt");
 const buttons = document.querySelectorAll('#choiceContainer button');
 const statButton = document.getElementById("statButton");
@@ -10,7 +10,7 @@ const playerStr = document.getElementById("playerStr");
 const playerSpd = document.getElementById("playerSpd");
 const playerInt = document.getElementById("playerInt");
 
-
+//player object used to hold player stats
 const player = {
     //name: prompt("What is your name?"),
     name: "Player Name",
@@ -23,10 +23,10 @@ const player = {
 
 //button to open and close player stat list
 statButton.onclick = function(){
-    if (statList.style.display === "flex"){
+    if (statList.style.display === "block"){
         statList.style.display = "none"
     } else {
-        statList.style.display = "flex"
+        statList.style.display = "block"
     }
 
     playerName.innerHTML = (`${player.name}`);
@@ -39,7 +39,7 @@ statButton.onclick = function(){
 
 //textPrompt.innerHTML = `${player.name}, it is nice to meet you! Get ready for an adventure!`
 
-
+//function used to control player choices
 function controlButtons() {
     buttons.forEach(function (e) {
         e.addEventListener("click", function () {
