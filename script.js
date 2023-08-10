@@ -25,60 +25,68 @@ const player = {
     Intelligence: 5
 };
 
-//textPrompt.innerHTML = `${player.name}, it is nice to meet you! Get ready for an adventure!`
-
 //this function calls the initial event that starts the game
 function initialEvent() {
-    buttons.forEach(function (e) {
+    buttons.forEach( (e) => {
         e.addEventListener("click", function () {
             if (e.innerHTML === "a torch") {
                 previousDecision.innerHTML = (`You have chosen:${e.innerHTML}!`)
-                textPrompt.innerHTML = (`Let's see if we can light this thing. You feel around and find some flint and steel and light the torch. You look around and see three doors. You choose...`);
-                buttonA.innerHTML = "Left Door";
-                buttonB.innerHTML = "Middle Door";
-                buttonC.innerHTML = "Right Door";
-                controlButtons();
-                
-                if(buttonA.innerHTML = "Left Door"){
+                textPrompt.innerHTML = (`Let's see if we can light this thing. You feel around and find some flint and steel and light the torch. You look around and see three doors. You choose...`)
                 doorRoute(e);
-                }
-
-            } else if (e.innerHTML === "a sword"){
+            } else if (e.innerHTML === "a sword") {
                 previousDecision.innerHTML = (`You have chosen:${e.innerHTML}! + 5 Strength!`)
-                player.Strength = player.Strength + 5;
+                player.Strength += 5;
                 textPrompt.innerHTML = (`Looks like you're the brawny type! You grab the sword and suddenly it begins to glow. You use it as a light. You look around and see three doors. You choose...`);
-                buttonA.innerHTML = "Left Door";
-                buttonB.innerHTML = "Middle Door";
-                buttonC.innerHTML = "Right Door";
-                controlButtons();
-            } else if(e.innerHTML === "a book"){
+                doorRoute(e);
+
+            } else if (e.innerHTML === "a book") {
                 previousDecision.innerHTML = (`You have chosen:${e.innerHTML}! + 5 Intelligence and +5 MP!`)
                 player.Intelligence = player.Intelligence + 5;
-                player.MP = player.MP + 5;
+                player.MP += 5;
                 textPrompt.innerHTML = (`Looks like you're the brainy type! Smart move. You open the book and realize its a spellbook. As you open it, it begins to glow. You can also see now too! You look around and see three doors. You choose...`);
-                buttonA.innerHTML = "Left Door";
-                buttonB.innerHTML = "Middle Door";
-                buttonC.innerHTML = "Right Door";
-                controlButtons();
+                doorRoute(e);
+
             }
 
         });
     });
 }
 
-function doorRoute(e){
-    e.innerHTML = "Left Door"
-    previousDecision.innerHTML = (`You have chosen:${e.innerHTML}!`)
-    textPrompt.innerHTML = (`A monster eats you and you died. :(`);
-}
+function doorRoute(e) {
+    buttonA.innerHTML = "Left Door";
+    buttonB.innerHTML = "Middle Door";
+    buttonC.innerHTML = "Right Door";
 
-//function used to control player choices
-function controlButtons() {
     buttons.forEach(function (e) {
         e.addEventListener("click", function () {
+            if (se.innerHTML === "Left Door") {
+                leftDoorRoute(e);
+            } else if (e.innerHTML === "Middle Door") {
+                middleDoorRoute(e);
+            } else if (e.innerHTML === "Right Door") {
+                rightDoorRoute(e);
+
+            }
         });
     });
-};
+}
+
+function leftDoorRoute(e) {
+    previousDecision.innerHTML = (`You have chosen:${e.innerHTML}!`)
+    textPrompt.innerHTML = (`You choose the left door`);
+}
+
+function middleDoorRoute(e) {
+    previousDecision.innerHTML = (`You have chosen:${e.innerHTML}!`)
+    textPrompt.innerHTML = (`You choose the middle door`);
+}
+
+function rightDoorRoute(e) {
+    previousDecision.innerHTML = (`You have chosen:${e.innerHTML}!`)
+    textPrompt.innerHTML = (`You choose the right door`);
+}
+
+
 
 //button to open and close player stat list
 statButton.onclick = function () {
