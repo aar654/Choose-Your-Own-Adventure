@@ -59,7 +59,7 @@ function doorRoute(e) {
 
     buttons.forEach(function (e) {
         e.addEventListener("click", function () {
-            if (se.innerHTML === "Left Door") {
+            if (e.innerHTML === "Left Door") {
                 leftDoorRoute(e);
             } else if (e.innerHTML === "Middle Door") {
                 middleDoorRoute(e);
@@ -73,15 +73,22 @@ function doorRoute(e) {
 
 function leftDoorRoute(e) {
     previousDecision.innerHTML = (`You have chosen:${e.innerHTML}!`)
-    textPrompt.innerHTML = (`You choose the left door`);
+    player.HP = 0;
+    textPrompt.innerHTML = (`You fall into a pit of spikes and die.`);
 }
 
 function middleDoorRoute(e) {
+    buttonA.innerHTML = "Left Door";
+    buttonB.innerHTML = "Middle Door";
+    buttonC.innerHTML = "Right Door";
     previousDecision.innerHTML = (`You have chosen:${e.innerHTML}!`)
     textPrompt.innerHTML = (`You choose the middle door`);
 }
 
 function rightDoorRoute(e) {
+    buttonA.innerHTML = "Left Door";
+    buttonB.innerHTML = "Middle Door";
+    buttonC.innerHTML = "Right Door";
     previousDecision.innerHTML = (`You have chosen:${e.innerHTML}!`)
     textPrompt.innerHTML = (`You choose the right door`);
 }
